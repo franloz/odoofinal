@@ -1,0 +1,31 @@
+<odoo>
+    <record id="odoofinal.mesa_report" model="ir.actions.report">
+        <field name="name"> Informe de mesas</field>
+        <field name="model">odoofinal.mesa</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoofinal.mesa_report_view</field>
+        <field name="report_file">odoofinal.mesa_report</field>
+        <field name="binding_model_id" ref="model_odoofinal_mesa"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="mesa_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>mesas </h1><br />
+                <t t-foreach="docs" t-as="mesa">
+                    <ul>
+                        <li>    name <span t-field="mesa.name" /></li>
+                        <li>    zona <span t-field="mesa.zona" /></li>
+                        <li>    num_mesa <span t-field="mesa.num_mesa" /></li>
+                        <li>    mesa_id <span t-field="mesa.mesa_id" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

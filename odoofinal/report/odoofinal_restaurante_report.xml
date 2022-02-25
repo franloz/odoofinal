@@ -1,0 +1,32 @@
+<odoo>
+    <record id="odoofinal.restaurante_report" model="ir.actions.report">
+        <field name="name"> Informe de restaurantes</field>
+        <field name="model">odoofinal.restaurante</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoofinal.restaurante_report_view</field>
+        <field name="report_file">odoofinal.restaurante_report</field>
+        <field name="binding_model_id" ref="model_odoofinal_restaurante"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="restaurante_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>restaurantes </h1><br />
+                <t t-foreach="docs" t-as="restaurante">
+                    <ul>
+                        <li>    name <span t-field="restaurante.name" /></li>
+                        <li>    nombre <span t-field="restaurante.nombre" /></li>
+                        <li>    num_titulos_gastronomicos <span t-field="restaurante.num_titulos_gastronomicos" /></li>
+                        <li>    num_premios_al_diseno <span t-field="restaurante.num_premios_al_diseno" /></li>
+                        <li>    total_reconocimientos <span t-field="restaurante.total_reconocimientos" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

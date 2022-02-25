@@ -1,0 +1,147 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="odoofinal.list">
+      <field name="name">odoofinal list</field>
+      <field name="model">odoofinal.odoofinal</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="odoofinal.action_window">
+      <field name="name">odoofinal window</field>
+      <field name="res_model">odoofinal.odoofinal</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="odoofinal.action_server">
+      <field name="name">odoofinal server</field>
+      <field name="model_id" ref="model_odoofinal_odoofinal"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="odoofinal" id="odoofinal.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="odoofinal.menu_1" parent="odoofinal.menu_root"/>
+    <menuitem name="Menu 2" id="odoofinal.menu_2" parent="odoofinal.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="odoofinal.menu_1_list" parent="odoofinal.menu_1"
+              action="odoofinal.action_window"/>
+    <menuitem name="Server to list" id="odoofinal" parent="odoofinal.menu_2"
+              action="odoofinal.action_server"/>
+-->
+
+
+<!-- Vistas de zapatillas-->
+
+    <record model="ir.ui.view" id="odoofinal.restaurante_list_view">
+      <field name="name">odoofinal.restaurante.view.tree</field>
+      <field name="model">odoofinal.restaurante</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="num_titulos_gastronomicos"/>
+          <field name="num_premios_al_diseno"/>
+          <field name="total_reconocimientos"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoofinal.restaurante_search_view">
+      <field name="name">odoofinal.restaurante.view.search</field>
+      <field name="model">odoofinal.restaurante</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="num_titulos_gastronomicos"/>
+          <field name="num_premios_al_diseno"/>
+          <field name="total_reconocimientos"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="odoofinal.restaurante_form_view">
+      <field name="name">odoofinal.restaurante.view.form</field>
+      <field name="model">odoofinal.restaurante</field>
+      <field name="arch" type="xml">
+        <form string="Información restaurante">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                ID <field name="name" placeholder="id"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre"/>
+                <field name="num_titulos_gastronomicos"/>
+                <field name="num_premios_al_diseno"/>
+                <field name="total_reconocimientos"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoofinal.restaurante_action_window">
+      <field name="name">restaurante</field>
+      <field name="res_model">odoofinal.restaurante</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="odoofinal" id="odoofinal.menu_root"/>
+    <menuitem name="restaurante" id="odoofinal.menu_restaurante" parent="odoofinal.menu_root"/>
+    <menuitem name="Lista" id="odoofinal.menu_restaurante_list" parent="odoofinal.menu_restaurante"
+              action="odoofinal.restaurante_action_window"/>
+  </data>
+</odoo>

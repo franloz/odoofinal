@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+<!--
+          <record id="object0" model="relaciones.relaciones">
+            <field name="name">Object 0</field>
+            <field name="value">0</field>
+          </record>
+
+          <record id="object1" model="relaciones.relaciones">
+            <field name="name">Object 1</field>
+            <field name="value">10</field>
+          </record>
+
+          <record id="object2" model="relaciones.relaciones">
+            <field name="name">Object 2</field>
+            <field name="value">20</field>
+          </record>
+
+          <record id="object3" model="relaciones.relaciones">
+            <field name="name">Object 3</field>
+            <field name="value">30</field>
+          </record>
+
+          <record id="object4" model="relaciones.relaciones">
+            <field name="name">Object 4</field>
+            <field name="value">40</field>
+          </record>
+-->
+          <record id="restaurante1" model="odoofinal.restaurante">
+            <field name="name">1</field>
+            <field name="nombre">Gondoliere</field>
+            <field name="num_titulos_gastronomicos">3</field>
+            <field name="num_premios_al_diseno">2</field>
+          </record>
+          <record id="encargado1" model="odoofinal.encargado">
+            <field name="name">1</field>
+            <field name="nombre">Antonio</field>
+          </record>
+          <record id="empleado1" model="odoofinal.empleado">
+            <field name="name">1</field>
+            <field name="nombre">Guille</field>
+          </record>
+          <record id="mesa1" model="odoofinal.mesa">
+            <field name="name">1</field>
+            <field name="zona">Zona7</field>
+            <field name="num_mesa">2</field>
+          </record>
+    </data>
+</odoo>
